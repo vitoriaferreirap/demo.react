@@ -3,7 +3,8 @@
 
 function Welcome() {
     return (
-        <div>Welcome</div>
+        /* apos returne se chama JSX */
+        <h1>Welcome</h1>
     )
 }
 
