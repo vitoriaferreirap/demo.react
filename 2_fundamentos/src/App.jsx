@@ -5,11 +5,12 @@ import Cachorro from './assets/components/Cachorro.jsx';
 import Counter from './assets/components/Counter.jsx';
 import Descricao from './assets/components/Descricao.jsx';
 import Form from './assets/components/form.jsx';
+import LoginButton from './assets/components/LoginButton.jsx';
 import Pai from './assets/components/Pai.jsx';
 import PaiFunction from './assets/components/PaiFunction.jsx';
+import RenderCondicional from './assets/components/RenderCondicional.jsx';
 import UserInfoForm from './assets/components/UserInfoForm.jsx';
 import Welcome from './assets/components/Welcome.jsx';
-
 
 function App() {
     return (
@@ -43,6 +44,15 @@ function App() {
 
             {/*enviando dados do formulário */}
             <Form />
+
+            {/*renderizacao condicional - expressao logica*/}
+            <RenderCondicional user="Matheus" />
+
+            {/*renderizacao condicional - expressao ternaria*/}
+            <LoginButton loggedIn={true} />
+            <LoginButton loggedIn={false} />
+
+
         </>
     );
 }
