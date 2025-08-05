@@ -4,6 +4,7 @@ import Button from './assets/components/Button.jsx';
 import Cachorro from './assets/components/Cachorro.jsx';
 import Counter from './assets/components/Counter.jsx';
 import Descricao from './assets/components/Descricao.jsx';
+import Form from './assets/components/form.jsx';
 import Pai from './assets/components/Pai.jsx';
 import PaiFunction from './assets/components/PaiFunction.jsx';
 import UserInfoForm from './assets/components/UserInfoForm.jsx';
@@ -37,8 +38,11 @@ function App() {
             {/*eventos de click */}
             <Button />
 
-            {/*Paddando funcoes de manupulacoes de eventos */}
+            {/*passando funcoes por props */}
             <PaiFunction />
+
+            {/*enviando dados do formulário */}
+            <Form />
         </>
     );
 }
