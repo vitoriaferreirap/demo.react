@@ -1,11 +1,14 @@
 import './App.css';
 import BomDia from './assets/components/BomDia.jsx'; //importando outro componente
+import Button from './assets/components/Button.jsx';
 import Cachorro from './assets/components/Cachorro.jsx';
 import Counter from './assets/components/Counter.jsx';
 import Descricao from './assets/components/Descricao.jsx';
 import Pai from './assets/components/Pai.jsx';
+import PaiFunction from './assets/components/PaiFunction.jsx';
 import UserInfoForm from './assets/components/UserInfoForm.jsx';
 import Welcome from './assets/components/Welcome.jsx';
+
 
 function App() {
     return (
@@ -31,6 +34,11 @@ function App() {
             {/*usando varios hooks - forms*/}
             <UserInfoForm />
 
+            {/*eventos de click */}
+            <Button />
+
+            {/*Paddando funcoes de manupulacoes de eventos */}
+            <PaiFunction />
         </>
     );
 }
