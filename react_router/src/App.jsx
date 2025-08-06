@@ -5,10 +5,10 @@ import Contact from './components/Contact';
 import Dashboard from './components/Dashboard';
 import Home from './components/Home';
 import Login from './components/Login';
+import NotFound from './components/NotFound';
 import Profile from './components/Profile';
 import Settings from './components/Settings';
 import TaskDetails from './components/TaskDetails';
-
 function App() {
     return (
         <>
@@ -49,6 +49,13 @@ function App() {
             <Link to="tasks/2">Ver Tarefa 2</Link>
             <Link to="tasks/3">Ver Tarefa 3</Link>
 
+            {/*rota 404 */}
+            <div>
+                <h2>Itens</h2>
+                <Link to="itens/1">Ver Item 1</Link>
+            </div>
+
+
             {/* CONFIG DE ROTAS/PAGINAS */}
             <Routes>
                 <Route path="/" element={<Home />} />
@@ -65,7 +72,12 @@ function App() {
 
                 {/*rotas dinamicas */}
                 <Route path="/tasks/:taskId" element={<TaskDetails />} />
+
+                {/*rota 404 */}
+                <Route path="*" element={<NotFound />} />
             </Routes>
+
+
 
         </>
     );
