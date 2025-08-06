@@ -7,6 +7,7 @@ import Home from './components/Home';
 import Login from './components/Login';
 import Profile from './components/Profile';
 import Settings from './components/Settings';
+import TaskDetails from './components/TaskDetails';
 
 function App() {
     return (
@@ -42,6 +43,11 @@ function App() {
                 <Link to="/dashboard">Dashboard</Link>
             </li>
 
+            {/*rotas dinamicas */}
+            <div>Tarefas</div>
+            <Link to="tasks/1">Ver Tarefa 1</Link>
+            <Link to="tasks/2">Ver Tarefa 2</Link>
+            <Link to="tasks/3">Ver Tarefa 3</Link>
 
             {/* CONFIG DE ROTAS/PAGINAS */}
             <Routes>
@@ -56,6 +62,9 @@ function App() {
                     <Route path="profile" element={<Profile />} />
                     <Route path="settings" element={<Settings />} />
                 </Route>
+
+                {/*rotas dinamicas */}
+                <Route path="/tasks/:taskId" element={<TaskDetails />} />
             </Routes>
 
         </>
