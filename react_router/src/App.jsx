@@ -2,8 +2,11 @@ import { Link, NavLink, Route, Routes } from 'react-router-dom';
 import "./App.css";
 import About from './components/About';
 import Contact from './components/Contact';
+import Dashboard from './components/Dashboard';
 import Home from './components/Home';
 import Login from './components/Login';
+import Profile from './components/Profile';
+import Settings from './components/Settings';
 
 function App() {
     return (
@@ -29,9 +32,14 @@ function App() {
                 <NavLink className={({ isActive }) => (isActive ? "active" : "inactive")} to="/contact">Contato</NavLink>
             </li>
 
-            {/*useNavigate */}
+            {/*useNavigate - redirecionamento de paginas */}
             <li>
                 <Link to="/login">Login</Link>
+            </li>
+
+            {/*rotas aninhasdas */}
+            <li>
+                <Link to="/dashboard">Dashboard</Link>
             </li>
 
 
@@ -42,6 +50,12 @@ function App() {
                 <Route path="/contact" element={<Contact />} />
                 {/*useNavigate */}
                 <Route path="/login" element={<Login />} />
+
+                {/*rotas aninhasdas */}
+                <Route path="/dashboard" element={<Dashboard />}>
+                    <Route path="profile" element={<Profile />} />
+                    <Route path="settings" element={<Settings />} />
+                </Route>
             </Routes>
 
         </>
