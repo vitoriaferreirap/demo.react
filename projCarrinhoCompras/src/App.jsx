@@ -12,7 +12,8 @@ import 'react-toastify/dist/ReactToastify.css'
 function App() {
 
     const [cardItem, setCardItem] = useState([]);
-
+    //funcao para adicionar produto ao carrinho
+    //se nao existir add, se existir incrementa
     const handleAddToCard = (product, quantity) => {
         //se nao existir add, se existir incrementa
         //find metodo para verificar se o item ja existe no carrinho (array)
@@ -32,7 +33,7 @@ function App() {
             }
         });
     };
-
+    //funcao para atualizar a quantidade do item no carrinho
     const handleUpdateCard = (product, quality) => {
         setCardItem((prevItems) => {
             return prevItems.map((item) =>
@@ -41,6 +42,13 @@ function App() {
         });
         toast.info(`Quantidade do ${product.name} atualizado com sucesso!`);
     }
+    //funcao para remover item do carrinho
+    const handleRemoveFromCart = (productId) => {
+        setCardItem((prevItems) => {
+            return prevItems.filter((item) => item.id !== productId);
+        });
+        toast.error(`Produto removido do carrinho!`);
+    };
 
     return (
         <BrowserRouter>
@@ -55,7 +63,7 @@ function App() {
                 {/* rotas */}
                 <Routes>
                     <Route path="/" element={<Catalogo onAddToCart={handleAddToCard} />} />
-                    <Route path="/carrinho" element={<Card cartItems={cardItem} onUpdateCart={handleUpdateCard} />} />
+                    <Route path="/carrinho" element={<Card cartItems={cardItem} onUpdateCard={handleUpdateCard} onRemoveFromCart={handleRemoveFromCart} />} />
                     <Route path="/thank-you" element={<ThankYouPage />} />
                 </Routes>
             </div>
