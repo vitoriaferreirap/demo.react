@@ -1,4 +1,5 @@
 
+import { useState } from 'react';
 
 const Product = ({ product, onAddToCart }) => {
 
@@ -19,4 +20,4 @@ const Product = ({ product, onAddToCart }) => {
     )
 }
 
-export default Product
+export default Product;
