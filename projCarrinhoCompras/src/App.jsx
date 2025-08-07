@@ -63,7 +63,20 @@ function App() {
                 {/* rotas */}
                 <Routes>
                     <Route path="/" element={<Catalogo onAddToCart={handleAddToCard} />} />
-                    <Route path="/carrinho" element={<Card cartItems={cardItem} onUpdateCard={handleUpdateCard} onRemoveFromCart={handleRemoveFromCart} />} />
+                    <Route path="/carrinho" element={
+                        <Card
+                            cartItems={cardItem}
+                            onUpdateCard={handleUpdateCard}
+                            onRemoveFromCart={handleRemoveFromCart}
+                            setCartItems={setCardItem}
+                            onCheckout={() => {
+                                if (cardItem.length > 0) {
+                                    toast.success("Compra realizada com sucesso!");
+                                    setCardItem([]); // Limpa o carrinho após a compra
+                                } else {
+                                    toast.error("Seu carrinho está vazio!");
+                                }
+                            }} />} />
                     <Route path="/thank-you" element={<ThankYouPage />} />
                 </Routes>
             </div>

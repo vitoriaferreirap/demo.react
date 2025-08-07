@@ -1,6 +1,7 @@
 import CardItem from "./CardItem";
 import CheckoutButton from "./CheckoutButton";
-const Card = ({ cartItems, onUpdateCard, onRemoveFromCart }) => {
+const Card = ({ cartItems, onUpdateCard, onRemoveFromCart, setCartItems }) => {
+
     const totalPrice = cartItems.reduce((total, item) => total + item.price * item.quantity, 0).toFixed(2);
 
     return (
@@ -18,7 +19,7 @@ const Card = ({ cartItems, onUpdateCard, onRemoveFromCart }) => {
                         <p>Total: ${totalPrice}</p>
                     </div>
 
-                    <CheckoutButton />
+                    <CheckoutButton cartItems={cartItems} setCartItems={setCartItems} />
 
                 </div>
 
