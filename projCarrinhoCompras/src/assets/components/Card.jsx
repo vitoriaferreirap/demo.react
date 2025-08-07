@@ -1,5 +1,5 @@
-
-const Card = ({ cartItems }) => {
+import CardItem from "./CardItem"
+const Card = ({ cartItems, onUpdateCart }) => {
     return (
         <div>
             <h1>Carrinho</h1>
@@ -9,7 +9,7 @@ const Card = ({ cartItems }) => {
                 <div>
                     <h2>Itens no carrinho:</h2>
                     {cartItems.map((item) => (
-                        <p key={item.id}>{item.name} - {item.quantity} x R$ {item.price.toFixed(2).replace('.', ',')}</p>
+                        <CardItem key={item.id} item={item} onUpdateCart={onUpdateCart} />
                     ))}
                 </div>
             )}

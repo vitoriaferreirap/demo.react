@@ -13,13 +13,12 @@ function App() {
 
     const [cardItem, setCardItem] = useState([]);
 
-    const handleAddToCart = (product, quantity) => {
+    const handleAddToCard = (product, quantity) => {
         //se nao existir add, se existir incrementa
         //find metodo para verificar se o item ja existe no carrinho (array)
         setCardItem((prevItems) => {
 
             const itemExists = prevItems.find((item) => item.id === product.id);
-
             if (itemExists) {
                 toast.info(`Quantidade do ${product.name} atualizado com sucesso!`);
                 //se existir, incrementa a quantidade
@@ -34,6 +33,15 @@ function App() {
         });
     };
 
+    const handleUpdateCard = (product, quality) => {
+        setCardItem((prevItems) => {
+            return prevItems.map((item) =>
+                item.id === product.id ? { ...item, quantity: quality } : item
+            );
+        });
+        toast.info(`Quantidade do ${product.name} atualizado com sucesso!`);
+    }
+
     return (
         <BrowserRouter>
             {/* Header */}
@@ -46,8 +54,8 @@ function App() {
 
                 {/* rotas */}
                 <Routes>
-                    <Route path="/" element={<Catalogo onAddToCart={handleAddToCart} />} />
-                    <Route path="/carrinho" element={<Card cartItems={cardItem} />} />
+                    <Route path="/" element={<Catalogo onAddToCart={handleAddToCard} />} />
+                    <Route path="/carrinho" element={<Card cartItems={cardItem} onUpdateCart={handleUpdateCard} />} />
                     <Route path="/thank-you" element={<ThankYouPage />} />
                 </Routes>
             </div>
