@@ -11,8 +11,11 @@ const Product = ({ product, onAddToCart }) => {
             <h2>{product.name}</h2>
             <span className="price">{`R$ ${product.price.toFixed(2).replace('.', ',')}`}</span>
             <div className="card-buttons">
-                <select>
-                    <option value="">1</option>
+                <select onChange={(e) => setQuantity((e.target.value))}>
+                    {/*select dinamico */}
+                    {[...Array(10).keys()].map((x) => (
+                        <option key={x} value={x + 1}>{x + 1}</option>
+                    ))}
                 </select>
                 <button className="add-to-cart" onClick={() => onAddToCart(product, quantity)}>Adicionar ao carrinho</button>
             </div>

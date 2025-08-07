@@ -6,13 +6,12 @@ const Card = ({ cartItems }) => {
             {cartItems.length === 0 ? (
                 <p>Seu carrinho está vazio.</p>
             ) : (
-                <ul>
+                <div>
+                    <h2>Itens no carrinho:</h2>
                     {cartItems.map((item) => (
-                        <li key={item.id}>
-                            {item.name} - {item.quantity} x R$ {item.price.toFixed(2).replace('.', ',')}
-                        </li>
+                        <p key={item.id}>{item.name} - {item.quantity} x R$ {item.price.toFixed(2).replace('.', ',')}</p>
                     ))}
-                </ul>
+                </div>
             )}
         </div>
     )

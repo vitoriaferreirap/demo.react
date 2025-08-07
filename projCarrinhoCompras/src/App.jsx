@@ -22,7 +22,6 @@ function App() {
 
             if (itemExists) {
                 toast.info(`Quantidade do ${product.name} atualizado com sucesso!`);
-
                 //se existir, incrementa a quantidade
                 return prevItems.map((item) =>
                     item.id === product.id ? { ...item, quantity: item.quantity + quantity } : item
@@ -32,10 +31,8 @@ function App() {
                 //se nao existir, adiciona o item ao carrinho
                 return [...prevItems, { ...product, quantity }];
             }
-
-        })
-    }
-
+        });
+    };
 
     return (
         <BrowserRouter>
