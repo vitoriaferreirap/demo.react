@@ -9,6 +9,8 @@ function App() {
             <h1>React + TS</h1>
             {/* componentes funcionais com TS*/}
             <Greeting name="João" />
+            {/* Hooks com TS*/}
+
 
         </>
     )
