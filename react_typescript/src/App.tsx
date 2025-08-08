@@ -1,5 +1,6 @@
 
 import './App.css'
+import ContadorIntervalo from './component/ContadorIntervalo'
 import Counter from './component/Counter'
 import Greeting from './component/Greeting'
 import TextInput from './component/TextInput'
@@ -15,6 +16,8 @@ function App() {
             <Counter />
             {/* Tipando eventos */}
             <TextInput />
+            {/* customizando hooks com TS */}
+            <ContadorIntervalo />
         </>
     )
 }
