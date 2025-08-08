@@ -1,5 +1,6 @@
 
 import './App.css'
+import Greeting from './component/Greeting'
 
 function App() {
 
@@ -7,6 +8,8 @@ function App() {
         <>
             <h1>React + TS</h1>
             {/* componentes funcionais com TS*/}
+            <Greeting name="João" />
+
         </>
     )
 }
