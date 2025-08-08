@@ -2,6 +2,7 @@
 import './App.css'
 import Counter from './component/Counter'
 import Greeting from './component/Greeting'
+import TextInput from './component/TextInput'
 
 function App() {
 
@@ -12,6 +13,8 @@ function App() {
             <Greeting name="João" />
             {/* Hooks com TS*/}
             <Counter />
+            {/* Tipando eventos */}
+            <TextInput />
         </>
     )
 }
