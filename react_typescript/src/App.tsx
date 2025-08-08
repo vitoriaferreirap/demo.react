@@ -1,5 +1,6 @@
 
 import './App.css'
+import Counter from './component/Counter'
 import Greeting from './component/Greeting'
 
 function App() {
@@ -10,8 +11,7 @@ function App() {
             {/* componentes funcionais com TS*/}
             <Greeting name="João" />
             {/* Hooks com TS*/}
-
-
+            <Counter />
         </>
     )
 }
